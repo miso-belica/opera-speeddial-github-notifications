@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>GitHub notifications preferences</title>
+		<style rel="stylesheet">
+			body {
+				background-color:#F3F3F3;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Preferences</h1>
+
+		<p>
+			<label for="update-interval">Update interval (in seconds)</label>:
+			<input id="update-interval" type="number" min="30" />
+		</p>
+		<p>
+			<label for="base-url">Target URL of Speed Dial cell</label>:
+			<input id="base-url" type="url" />
+		</p>
+
+		<script>
+			var updateIntervalElement = document.getElementById("update-interval"),
+				baseUrlElement = document.getElementById("base-url")
+
+			updateIntervalElement.addEventListener("change", function() {
+				widget.preferences["update-interval"] = this.value;
+			}, false)
+
+			baseUrlElement.addEventListener("change", function() {
+				widget.preferences["base-url"] = this.value;
+			}, false)
+
+			updateIntervalElement.value = widget.preferences["update-interval"]
+			baseUrlElement.value = widget.preferences["base-url"]
+		</script>
+	</body>
+</html>

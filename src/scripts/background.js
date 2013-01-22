@@ -50,8 +50,9 @@ window.addEventListener("load", function() {
 			opera.contexts.speeddial.title = "GitHub (" + count + ")"
 			opera.contexts.speeddial.url = widget.preferences["notifications-url"]
 		}
+
+		setTimeout(update, widget.preferences["update-interval"] * 1000)
 	}
 
-	setInterval(update, widget.preferences["update-interval"])
 	update()
 }, false)
