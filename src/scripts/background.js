@@ -43,12 +43,12 @@ window.addEventListener("load", function() {
 		if(isNaN(count) || count === 0) {
 			outputElement.innerText = ""
 			opera.contexts.speeddial.title = "GitHub"
-			opera.contexts.speeddial.url = widget.preferences["notifications-url"]
+			opera.contexts.speeddial.url = widget.preferences["base-url"]
 		}
 		else {
 			outputElement.innerText = count
 			opera.contexts.speeddial.title = "GitHub (" + count + ")"
-			opera.contexts.speeddial.url = widget.preferences["base-url"]
+			opera.contexts.speeddial.url = widget.preferences["notifications-url"]
 		}
 	}
 
