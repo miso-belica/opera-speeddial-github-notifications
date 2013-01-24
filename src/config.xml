@@ -4,7 +4,7 @@
 	<description xml:lang="en">Displays count of unread GitHub notifications in Speed Dial.</description>
 
 	<name xml:lang="sk">GitHub upozornenia</name>
-	<description xml:lang="sk">Zobrazí počet neprečítaných upozornení z GitHubu v rýchlom prístupe.</description>
+	<description xml:lang="sk">Zobrazí počet neprečítaných oznámení z GitHubu v rýchlom prístupe.</description>
 
 	<author href="https://github.com/miso-belica">Mišo Belica</author>
 	<license href="http://opensource.org/licenses/MIT">
