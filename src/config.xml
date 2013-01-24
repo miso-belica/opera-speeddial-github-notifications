@@ -29,16 +29,16 @@
 		THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	</license>
 
-	<icon width="64" height="64" src="images/octocat_64.png" />
+	<icon width="64" height="64" src="images/octocat_64.png"/>
 
   <feature name="opera:speeddial" required="true">
     <param name="url" value="https://github.com/"/>
   </feature>
-  <feature name="opera:share-cookies" />
-	<access origin="https://github.com/" />
+  <feature name="opera:share-cookies"/>
+	<access origin="https://github.com/"/>
 
 	<!-- default update interval is 2 minutes (value in seconds) -->
-	<preference name="update-interval" value="120" />
-	<preference name="base-url" value="https://github.com/" />
-	<preference name="notifications-url" value="https://github.com/notifications" readonly="true" />
+	<preference name="update-interval" value="120"/>
+	<preference name="base-url" value="https://github.com/"/>
+	<preference name="notifications-url" value="https://github.com/notifications" readonly="true"/>
 </widget>
