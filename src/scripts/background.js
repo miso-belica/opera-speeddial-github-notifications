@@ -1,6 +1,11 @@
 window.addEventListener("load", function() {
 	"use strict"
 
+	function logError() {
+		var message = Array.prototype.slice.call(arguments).join("")
+		opera.postError("GitHub notifications: " + message)
+	}
+
 	var Requests = {
 		get : function(url, callback) {
 			var request = new XMLHttpRequest()
@@ -14,6 +19,9 @@ window.addEventListener("load", function() {
 
 				if(request.status === 200) {
 					callback(request.responseText)
+				}
+				else {
+					logError("Request error = ", JSON.stringify(request, null, "\t"))
 				}
 			}
 			request.send()
@@ -30,6 +38,9 @@ window.addEventListener("load", function() {
 
 			if(countElement) {
 				count = parseInt(countElement.textContent, 10)
+			}
+			else {
+				logError("Element with count of notifications not found")
 			}
 		})
 
