@@ -48,21 +48,27 @@ window.addEventListener("load", function() {
 	}
 
 	function update() {
-		var count = getGithubNotificationsCount(),
-			outputElement = document.getElementById("notifications-count")
+		try {
+			var count = getGithubNotificationsCount(),
+				outputElement = document.getElementById("notifications-count")
 
-		if(isNaN(count) || count === 0) {
-			outputElement.innerText = ""
-			opera.contexts.speeddial.title = "GitHub"
-			opera.contexts.speeddial.url = widget.preferences["base-url"]
+			if(isNaN(count) || count === 0) {
+				outputElement.innerText = ""
+				opera.contexts.speeddial.title = "GitHub"
+				opera.contexts.speeddial.url = widget.preferences["base-url"]
+			}
+			else {
+				outputElement.innerText = count
+				opera.contexts.speeddial.title = "GitHub (" + count + ")"
+				opera.contexts.speeddial.url = widget.preferences["notifications-url"]
+			}
 		}
-		else {
-			outputElement.innerText = count
-			opera.contexts.speeddial.title = "GitHub (" + count + ")"
-			opera.contexts.speeddial.url = widget.preferences["notifications-url"]
+		catch(e) {
+			logError(e.stacktrace)
 		}
-
-		setTimeout(update, widget.preferences["update-interval"] * 1000)
+		finally {
+			setTimeout(update, widget.preferences["update-interval"] * 1000)
+		}
 	}
 
 	update()
