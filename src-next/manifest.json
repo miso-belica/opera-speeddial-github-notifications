@@ -1,0 +1,27 @@
+{
+	"name": "GitHub notifications",
+	"version" : "1.0.3",
+	"manifest_version" : 2,
+
+	"description" : "Displays count of unread GitHub notifications in Speed Dial.",
+	"developer": {
+		"name" : "Mišo Belica",
+		"url" : "https://github.com/miso-belica"
+	},
+	"icons" : {
+		"128": "images/octocat_64.png"
+	},
+
+	"background" : {
+		"page" : "index.html"
+	},
+	"options_page" : "options.html",
+	"permissions" : [
+		"https://github.com/notifications",
+		"storage"
+	],
+	"speeddial" : {
+		"title": "GitHub",
+		"url": "https://github.com/"
+	}
+}
