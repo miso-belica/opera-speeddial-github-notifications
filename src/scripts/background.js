@@ -11,7 +11,6 @@ window.addEventListener("load", function() {
 			var request = new XMLHttpRequest()
 			request.open("GET", url, false)
 			request.setRequestHeader("X-Requested-With", "XMLHttpRequest")
-			request.setRequestHeader("Connection", "close")
 			request.onreadystatechange = function() {
 				if(request.readyState !== XMLHttpRequest.DONE) {
 					return
